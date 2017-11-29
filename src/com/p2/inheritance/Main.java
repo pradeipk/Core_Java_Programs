@@ -5,8 +5,7 @@ public class Main {
 	public static void main(String args[]) {
 
 		Animal a = new Animal(); // Animal reference and object
-		Animal b = new Dog(); // Animal reference but Dog object vice vers will
-								// not work
+		Animal b = (Animal)new Dog(); // Animal reference but Dog object vice versa will not work
 		//Dog d = (Dog) new Animal(); // java.lang.ClassCastException:
 		// Dog d = new Animal(); this will give casting error
 		a.move(); // runs the method in Animal class

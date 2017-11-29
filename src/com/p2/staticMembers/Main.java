@@ -12,6 +12,8 @@ public class Main {
 		staticEx.age = 49;
 		StaticEx staticEx2  = new StaticEx();
 		System.out.println(staticEx2.age);
+		
+		CallingMethodsInSameClass ex = new CallingMethodsInSameClass();
 
 	}
 

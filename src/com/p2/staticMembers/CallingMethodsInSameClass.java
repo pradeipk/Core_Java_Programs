@@ -7,6 +7,7 @@ package com.p2.staticMembers;
  */
 
 public class CallingMethodsInSameClass {
+
 	public static void main(String[] args) {
 		printOne();
 		printOne();
@@ -16,6 +17,11 @@ public class CallingMethodsInSameClass {
 		// printThree();
 		CallingMethodsInSameClass cmi = new CallingMethodsInSameClass();
 		cmi.printThree();
+		
+		// below classes will be not available outside of the class definition
+		cmi.printMeNonStatic();
+		cmi.printMe();
+		CallingMethodsInSameClass.printMe();
 	}
 
 	public static void printOne() {
@@ -27,8 +33,20 @@ public class CallingMethodsInSameClass {
 		printOne();
 	}
 
+	// non static methods can be called only on object and not on class
 	public void printThree() {
 		System.out.println("Hello World 3");
 		// printOne();
 	}
+
+	private static void printMe() {
+
+		System.out.println("printMe ------------------ > 39");
+	}
+
+	private void printMeNonStatic() {
+		System.out.println("printMeNonStatic ------------------ > 43");
+
+	}
+
 }
