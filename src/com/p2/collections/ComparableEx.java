@@ -1,5 +1,6 @@
 package com.p2.collections;
 
+// An example demonstrating use of comparable
 //A Java program to demonstrate use of Comparable
 /* step -1 , make your class implements Comparable
  * Step -2, Provide implementation to compareTo method
@@ -7,7 +8,26 @@ package com.p2.collections;
 
 import java.util.*;
 
-//A class 'Movie' that implements Comparable
+// Driver class
+public class ComparableEx extends Object {
+	public static void main(String[] args) {
+		ArrayList<Movie> list = new ArrayList<Movie>();
+		list.add(new Movie("Force Awakens", 8.3, 2015));
+		list.add(new Movie("Star Wars", 8.7, 1977));
+		list.add(new Movie("Empire Strikes Back", 8.8, 1980));
+		list.add(new Movie("Return of the Jedi", 8.4, 1983));
+
+		Collections.sort(list);
+
+		System.out.println("Movies after sorting : ");
+		for (Movie movie : list) {
+			System.out.println(movie.getName() + " " + movie.getRating() + " "
+					+ movie.getYear());
+		}
+	}
+}	
+
+// A class 'Movie' that implements Comparable
 class Movie implements Comparable<Movie> {
 	private double rating;
 	private String name;
@@ -36,24 +56,5 @@ class Movie implements Comparable<Movie> {
 
 	public int getYear() {
 		return year;
-	}
-}
-
-// Driver class
-public class ComparableEx {
-	public static void main(String[] args) {
-		ArrayList<Movie> list = new ArrayList<Movie>();
-		list.add(new Movie("Force Awakens", 8.3, 2015));
-		list.add(new Movie("Star Wars", 8.7, 1977));
-		list.add(new Movie("Empire Strikes Back", 8.8, 1980));
-		list.add(new Movie("Return of the Jedi", 8.4, 1983));
-
-		Collections.sort(list);
-
-		System.out.println("Movies after sorting : ");
-		for (Movie movie : list) {
-			System.out.println(movie.getName() + " " + movie.getRating() + " "
-					+ movie.getYear());
-		}
 	}
 }
