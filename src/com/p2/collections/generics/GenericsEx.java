@@ -3,6 +3,11 @@ package com.p2.collections.generics;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://docs.oracle.com/javase/tutorial/java/generics/
+ * @author pradeep_patel
+ *
+ */
 public class GenericsEx {
 
 	public static void main(String[] args) {

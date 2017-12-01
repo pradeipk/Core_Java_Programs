@@ -1,7 +1,11 @@
 package com.p2.collections;
 
-// Java program to demonstrate working of Comparator
-// interface
+/**
+ *  Java program to demonstrate working of Comparator interface
+ *  override compare
+ *  an extra class is required for sorting
+ */
+
 import java.util.*;
 
 // A class to represent a student.
@@ -34,6 +38,7 @@ class Sortbyname implements Comparator<Student> {
 	// Used for sorting in ascending order of
 	// roll name
 	public int compare(Student a, Student b) {
+		// use compareTo on string 
 		return a.name.compareTo(b.name);
 	}
 }
@@ -50,14 +55,14 @@ public class ComparatorEx {
 		for (int i = 0; i < ar.size(); i++)
 			System.out.println(ar.get(i));
 
+		// Sorting By roll Number
 		Collections.sort(ar, new Sortbyroll());
-
 		System.out.println("\nSorted by rollno");
 		for (int i = 0; i < ar.size(); i++)
 			System.out.println(ar.get(i));
 
+		// Sorting By name
 		Collections.sort(ar, new Sortbyname());
-
 		System.out.println("\nSorted by name");
 		for (int i = 0; i < ar.size(); i++)
 			System.out.println(ar.get(i));
